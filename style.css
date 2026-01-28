@@ -7,3 +7,57 @@
     scroll-behavior: smooth;
 }
 
+@font-face {
+    font-family: 'Coolvetica'; 
+    src: url('fonts/Coolvetica\ Rg.otf') format('otf'),
+}
+
+body {
+    background-color: black;
+}
+
+/* nav bar area */
+nav {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 15px;
+    font-family: 'Coolvetica', sans-serif;
+}
+
+nav .container {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    align-items: center;
+    margin-left: 30px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 10px 20px 10px 50px;
+    gap: 20px;
+    background-color: 
+    border-radius: 0 30px 30px 0;
+    position: relative;
+    z-index: 9;
+    margin-left: -30px;
+}
+
+nav ul li a {  
+    text-decoration: none;
+    color: rgb(255,255,255);
+    font-size: 15px;
+}
+
+.txt-logo {
+    background-color: rgba(133, 51, 201, 0.5);
+    color: rgb(255,255,255);
+    padding: 10px 30px;
+    font-size: 23px;
+    font-weight: bold;
+    border-radius: 30px;
+    position: relative;
+    z-index: 10;
+}
