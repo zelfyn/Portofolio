@@ -8,9 +8,15 @@
     scroll-behavior: smooth;
 }
 
+html {
+    overflow: hidden;
+}
+
 body {
-    overflow-x: hidden;
-    background-color: black;
+    background-color: #000;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* fonts area */
@@ -28,6 +34,18 @@ body {
     font-style: normal;
 }
 
+/* ========================================
+   PARALLAX WRAPPER - KUNCI UTAMA!
+   ======================================== */
+
+.parallax-wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+    perspective-origin: center center;
+}
+
 /* nav bar area */
 nav {
     display: flex;
@@ -37,6 +55,7 @@ nav {
     position: fixed;
     z-index: 100;
     top: 0;
+    left: 0;
 }
 
 nav .container {
@@ -57,7 +76,6 @@ nav ul {
     z-index: 9;
     margin-left: -30px;
     background: rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.6px);
     -webkit-backdrop-filter: blur(5.6px);
@@ -68,11 +86,12 @@ nav ul {
 
 nav ul li a {  
     text-decoration: none;
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     font-size: 15px;
     padding: 20px 20px;
     border-radius: 30px;
     transition: .3s ease-in-out;
+    display: inline-block;
 }
 
 nav ul li a:hover {  
@@ -85,7 +104,7 @@ nav ul li a:hover {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5.6px);
     -webkit-backdrop-filter: blur(5.6px);
-    color: rgb(255,255,255);
+    color: rgb(255, 255, 255);
     padding: 10px 30px;
     font-size: 20px;
     font-weight: bold;
@@ -95,6 +114,7 @@ nav ul li a:hover {
     outline: 2px solid rgb(185, 65, 255);
     outline-offset: 0px;
     transition: .2s ease-in-out;
+    cursor: pointer;
 }
 
 .txt-logo:hover {
@@ -116,75 +136,141 @@ nav ul li a:hover {
     transition: .2s ease-in-out;
 }
 
-/* parallax wrapper */
-.parallax-wrapper {
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 1px;
-    perspective-origin: center;
-}
-
-/* home page area */
-section {
-    min-height: 100vh; 
-}
-
-section img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    display: block;
-}
-
 .home {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     transform-style: preserve-3d;
-    overflow: hidden;
+    z-index: -1;
 }
 
-.home-item1, .home-item2, .home-item3 {
+.home-item1, 
+.home-item2, 
+.home-item3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform-style: preserve-3d;
+}
+
+.home-item1 img,
+.home-item2 img,
+.home-item3 img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d;
+    object-fit: cover;
+    object-position: center;
 }
 
 .home-item1 {
-    z-index: ;
-    transform: translateZ(-5px) scale(3);
+    z-index: -10;
+    transform: translateZ(-2px) scale(3);
 }
 
 .home-item2 {
-    z-index: 2;
+    z-index: -9;
     transform: translateZ(-1px) scale(2);
 }
 
 .home-item3 {
-    z-index: 3;
+    z-index: -8;
     transform: translateZ(0px) scale(1);
+}
+
+.home-txt {
+    color: rgb(255, 255, 255);
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* grid area */
 .grid {
-    background-color: black;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 100%);
     position: relative;
     z-index: 10;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 60px 20px;
 }
 
 .hooh {
     color: white;
     font-family: 'Outfit', sans-serif;
+    text-align: center;
+}
+
+.hooh h1 {
     font-size: 48px;
     font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #b941ff 0%, #ff41e5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hooh p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    /* Kurangi efek parallax di mobile */
+    .parallax-wrapper {
+        perspective: 2px;
+    }
+    
+    .home-item1 {
+        transform: translateZ(-1px) scale(1.5);
+    }
+
+    .home-item2 {
+        transform: translateZ(-0.5px) scale(1.25);
+    }
+
+    .home-item3 {
+        transform: translateZ(0px) scale(1);
+    }
+
+    nav .container {
+        margin-left: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-left: 0;
+        margin-top: 10px;
+        padding: 10px 20px;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
+    nav ul li a {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .txt-logo {
+        font-size: 18px;
+        padding: 8px 20px;
+    }
+
+    .hooh h1 {
+        font-size: 32px;
+    }
+
+    .hooh p {
+        font-size: 16px;
+    }
 }
