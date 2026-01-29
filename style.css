@@ -34,10 +34,7 @@ body {
     font-style: normal;
 }
 
-/* ========================================
-   PARALLAX WRAPPER - KUNCI UTAMA!
-   ======================================== */
-
+/* parallax wrap */
 .parallax-wrapper {
     height: 100vh;
     overflow-x: hidden;
@@ -70,7 +67,7 @@ nav .container {
 nav ul {
     display: flex;
     list-style-type: none;
-    padding: 10px 20px 10px 40px;
+    padding: 0px 20px 0px 40px;
     border-radius: 0 30px 30px 0;
     position: relative;
     z-index: 9;
@@ -88,7 +85,7 @@ nav ul li a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-size: 15px;
-    padding: 20px 20px;
+    padding: 15px 20px;
     border-radius: 30px;
     transition: .3s ease-in-out;
     display: inline-block;
@@ -114,7 +111,6 @@ nav ul li a:hover {
     outline: 2px solid rgb(185, 65, 255);
     outline-offset: 0px;
     transition: .2s ease-in-out;
-    cursor: pointer;
 }
 
 .txt-logo:hover {
@@ -136,6 +132,7 @@ nav ul li a:hover {
     transition: .2s ease-in-out;
 }
 
+/* home page area */
 .home {
     position: relative;
     height: 100vh;
@@ -184,43 +181,28 @@ nav ul li a:hover {
 .home-txt {
     color: rgb(255, 255, 255);
     width: auto;
-    height: auto;
+    height: 300px;
+    font-size: 25px;
+    z-index: -9;
+    transform: translateZ(-1px) scale(3);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
+
+
 
 /* grid area */
 .grid {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 100%);
+    background: rgb(0, 0, 0);
     position: relative;
-    z-index: 10;
+    z-index: 1;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 60px 20px;
-}
-
-.hooh {
-    color: white;
-    font-family: 'Outfit', sans-serif;
-    text-align: center;
-}
-
-.hooh h1 {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, #b941ff 0%, #ff41e5 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hooh p {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Responsive */
@@ -266,11 +248,4 @@ nav ul li a:hover {
         padding: 8px 20px;
     }
 
-    .hooh h1 {
-        font-size: 32px;
-    }
-
-    .hooh p {
-        font-size: 16px;
-    }
 }
