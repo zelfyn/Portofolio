@@ -14,7 +14,7 @@ html {
 
 body {
     background-color: #000;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Outfit', sans-serif ;
     height: 100vh;
     overflow-x: hidden;
 }
@@ -223,6 +223,7 @@ section {
     grid-template-rows: repeat(7, 1fr);
     gap: 10px;
     flex-wrap: nowrap;
+    width: auto;
 }
     
 .box1 {
@@ -230,23 +231,30 @@ section {
     grid-row: span 4 / span 4;
     border-radius: 12px;
     min-width: 45rem;
-    background-color: beige;
-    padding: 1rem;
+    background: rgba(165, 165, 165, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 2rem;
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
 }
 
 .box1 img {
+    position: relative;
     object-fit: cover;
-    height: 250px;
-    aspect-ratio: 4/6;
+    height: 300px;
+    width: 200px;
     border-radius: 100px 100px 0 0;
-    padding: 10px 0;
+    transition: .3s ease-in-out;
 }
 
 .box1 img:hover {
     transform: translateY(-5px);
+    transform: scaleX(3px);
+    transition: .2s ease-in-out;
 }
 
 .text-box1 {
@@ -255,30 +263,125 @@ section {
     justify-content: center;
     padding-left: 10px;
     max-width: 25rem;
+    color: rgb(255, 255, 255);
+    text-align: justify;
 }
 
-.side-box1 {
+.text-box1 span {
+    color: rgb(162, 0, 255);
+}
+
+.instagram {
     grid-column-start: 5;
-    background-color: beige;
-    min-width: 10px;
+    max-width: 120px;
+    height: 60px;
+    border-radius: 16px;
+    background: rgba(165, 165, 165, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease-in-out;
+    a {
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        text-decoration: none;
+    }
 }
 
-.side-box2 {
+.instagram:hover {
+    background-color: rgb(226, 6, 116);
+    transition: .2s ease-in-out;
+}
+
+.tiktok {
     grid-column-start: 5;
     grid-row-start: 2;
-    background-color: beige;
+    border-radius: 16px;
+    max-width: 120px;
+    height: 60px;
+    background: rgba(165, 165, 165, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s ease-in-out;
+    a {
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        text-decoration: none;
+    }
 }
 
-.side-box3 {
+.tiktok:hover {
+    background-color: rgb(255, 255, 255);
+    transition: .2s ease-in-out;
+    a {
+        color: rgb(0, 0, 0);
+    }
+}
+
+.github {
     grid-column-start: 5;
     grid-row-start: 3;
-    background-color: beige;
+    border-radius: 16px;
+    background: rgba(165, 165, 165, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 120px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s ease-in-out;
+    a {
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        text-decoration: none;
+    }
 }
 
-.side-box4 {
+.github:hover {
+    background-color: rgb(255, 255, 255);
+    transition: .2s ease-in-out;
+    a {
+        color: rgb(0, 0, 0);
+    }
+}
+
+
+.linkedin {
     grid-column-start: 5;
     grid-row-start: 4;
-    background-color: beige;
+    border-radius: 16px;
+    background: rgba(165, 165, 165, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 120px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        text-decoration: none;
+    }
+}
+
+.linkedin:hover {
+    background-color: rgb(0, 140, 255);
+    transition: .2s ease-in-out;
 }
 
 .side-box1,
@@ -286,7 +389,7 @@ section {
 .side-box3,
 .side-box4 {
     border-radius: 12px;
-    height: auto;
+    height: auto;   
     width: auto;
 }
 
