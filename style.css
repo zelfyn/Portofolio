@@ -128,7 +128,6 @@ section {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 3rem 0;
 }
 
 .home {
@@ -201,12 +200,11 @@ section {
     z-index: 1;
     background: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
-    min-height: 100vh;
     display: flex;
     flex-direction: column; 
     align-items: center;   
     justify-content: center;
-    padding: 5rem;
+    padding: 5rem 0;
     gap: 40px;
 }
 
@@ -217,19 +215,17 @@ section {
 
 .about-box {
     display: grid;
-    padding: 1rem;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, max-width: 10px);
     grid-template-rows: repeat(7, 1fr);
     gap: 18px;
-    flex-wrap: nowrap;
 }
     
 .box1 {
     grid-column: span 4 / span 4;
     grid-row: span 4 / span 4;
     border-radius: 12px;
-    min-width: 49rem;
-    max-height: 25rem;
+    min-width: 48rem;
+    height: 25rem;
     background: rgba(165, 165, 165, 0.08);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.6px);
@@ -274,6 +270,16 @@ section {
     padding: 0;
 }
 
+.social-button {
+    grid-column-start: 5;
+    grid-row: span 4 / span 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 35px;
+}
+
 .instagram {
     grid-column-start: 5;
     border-radius: 16px;
@@ -282,12 +288,6 @@ section {
     backdrop-filter: blur(5.6px);
     -webkit-backdrop-filter: blur(5.6px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 0 auto;
-    width: 140px;
-    height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: .2s ease-in-out;
     a {
         color: rgb(255, 255, 255);
@@ -312,12 +312,6 @@ section {
     backdrop-filter: blur(5.6px);
     -webkit-backdrop-filter: blur(5.6px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 0 auto;
-    width: 140px;
-    height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: .2s ease-in-out;
     a {
         color: rgb(255, 255, 255);
@@ -345,12 +339,6 @@ section {
     backdrop-filter: blur(5.6px);
     -webkit-backdrop-filter: blur(5.6px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 0 auto;
-    width: 140px;
-    height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: .2s ease-in-out;
     a {
         color: rgb(255, 255, 255);
@@ -379,12 +367,6 @@ section {
     backdrop-filter: blur(5.6px);
     -webkit-backdrop-filter: blur(5.6px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 0 auto;
-    width: 140px;
-    height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: .2s ease-in-out;
     a {
         color: rgb(255, 255, 255);
@@ -400,13 +382,15 @@ section {
     transition: .2s ease-in-out;
 }
 
-.side-box1,
-.side-box2,
-.side-box3,
-.side-box4 {
-    border-radius: 12px;
-    height: auto;   
-    width: auto;
+.instagram,
+.tiktok,
+.github,
+.linkedin {
+    height: 60px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .porto-box {
@@ -469,7 +453,10 @@ section {
 }
 
 /* Project Section */
-
+.project {
+    background-color: rgb(0, 0, 0);
+    padding: 5rem 0;
+}
 
 /* Animation Keyframe */
 
