@@ -215,8 +215,8 @@ section {
 
 .about-box {
     display: grid;
-    grid-template-columns: repeat(5, max-width: 10px);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(7, auto);
     gap: 18px;
 }
     
@@ -452,10 +452,189 @@ section {
     background-color: rgba(0, 0, 0, 0.397);
 }
 
-/* Project Section */
+/* Project Section Styles */
 .project {
-    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 5rem 0;
+    gap: 30px;
+    background-color: rgb(0, 0, 0);
+}
+
+.title-project {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.project-container {
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 20px;
+    background: rgba(165, 165, 165, 0.08);
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active {
+    background: rgb(185, 65, 255);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(185, 65, 255, 0.5);
+}
+
+.dynamic-content {
+    width: 100%;
+    min-height: 200px;
+    background: rgba(165, 165, 165, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 30px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* List Layout untuk isi konten */
+.lang-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.lang-item {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 1px solid rgb(185, 65, 255);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.lang-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(185, 65, 255, 0.4);
+}
+
+.proj-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.proj-item {
+    text-decoration: none;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid rgb(185, 65, 255);
+    transition: 0.3s ease;
+}
+
+.proj-item h3 {
+    margin-bottom: 5px;
+    color: rgb(185, 65, 255);
+}
+
+.proj-item:hover {
+    background: rgba(185, 65, 255, 0.2);
+    transform: translateX(10px);
+}
+
+/* Footer Styles */
+footer {
+    background: #0a0a0a;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 0 20px 0;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.footer-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-container h2 {
+    font-size: 30px;
+}
+
+.footer-container h2 span {
+    color: rgb(185, 65, 255);
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    /* Bright purple background as requested */
+    background-color: #d866ff; 
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.footer-social a:hover {
+    background-color: white;
+    color: #d866ff;
+    box-shadow: 0 0 20px #d866ff;
+    transform: translateY(-5px);
+}
+
+.footer-container p {
+    color: gray;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Animation Keyframe */
